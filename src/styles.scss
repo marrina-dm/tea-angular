@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+.ui-accordion-header .ui-accordion-header-icon {
+  background: url("/images/down.png");
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: calc(50% - 6px);
+  right: 28px;
+}
+
+.ui-accordion-header-active .ui-accordion-header-icon {
+  background-image: url("/images/up.png");
+  transform: rotate(3deg);
+}

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "tea-angular2": {
+    "tea-angular": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -24,7 +24,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/tea-angular2",
+            "outputPath": "dist/tea-angular",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -39,9 +39,15 @@
               }
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/jquery-ui/dist/themes/base/jquery-ui.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/jquery-ui/dist/jquery-ui.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -71,10 +77,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "tea-angular2:build:production"
+              "buildTarget": "tea-angular:build:production"
             },
             "development": {
-              "buildTarget": "tea-angular2:build:development"
+              "buildTarget": "tea-angular:build:development"
             }
           },
           "defaultConfiguration": "development"
