@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
 import {Observable, Subscription, tap} from "rxjs";
 import {ActivatedRoute} from "@angular/router";
-import {OrderService} from "../../../services/order.service";
+import {OrderService} from "../../shared/services/order.service";
 import {OrderType} from "../../../types/order.type";
 
 @Component({

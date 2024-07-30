@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
 import {Observable, Subject} from "rxjs";
 import {HttpClient} from "@angular/common/http";
-import {ProductType} from "../types/product.type";
+import {ProductType} from "../../../types/product.type";
+import {environment} from "../../../environments/environment";
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ProductService {
   public subjectSearch: Subject<string>;
   public searchValue: string = '';
@@ -23,10 +26,10 @@ export class ProductService {
       params = `?search=${search}`;
     }
 
-    return this.http.get<ProductType[]>('https://testologia.ru/tea' + params);
+    return this.http.get<ProductType[]>(environment.apiURL + 'tea' + params);
   }
 
   getProduct(id: number): Observable<ProductType> {
-    return this.http.get<ProductType>(`https://testologia.ru/tea?id=${id}`);
+    return this.http.get<ProductType>(environment.apiURL + `tea?id=${id}`);
   }
 }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {FormControl} from "@angular/forms";
 import {Router} from "@angular/router";
-import {ProductService} from "../../../services/product.service";
+import {ProductService} from "../../services/product.service";
 
 @Component({
   selector: 'header-component',

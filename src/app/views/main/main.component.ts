@@ -1,5 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Observable, Subscription} from "rxjs";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 declare var $: any;
 
@@ -13,7 +14,8 @@ export class MainComponent implements OnInit, OnDestroy {
   private subscription: Subscription | null = null;
   public isOpen: boolean = false;
 
-  constructor() {
+
+  constructor(private modalService: NgbModal) {
     this.observable = new Observable(observer => {
       const timeout = setTimeout(() => {
         observer.next(true);

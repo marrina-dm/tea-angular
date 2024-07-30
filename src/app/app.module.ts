@@ -3,44 +3,31 @@ import {BrowserModule, provideClientHydration} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {HeaderComponent} from './components/common/header/header.component';
-import {FooterComponent} from './components/common/footer/footer.component';
-import {MainComponent} from './components/pages/main/main.component';
-import {OrderComponent} from './components/pages/order/order.component';
-import {ProductComponent} from './components/pages/product/product.component';
-import {ProductsComponent} from './components/pages/products/products.component';
-import {ProductDescriptionPipe} from './pipes/product-description.pipe';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {ProductService} from "./services/product.service";
-import {OrderService} from "./services/order.service";
+import {HeaderComponent} from './shared/layout/header/header.component';
+import {FooterComponent} from './shared/layout/footer/footer.component';
 import {provideHttpClient} from "@angular/common/http";
-import {RouterLink, RouterLinkActive, RouterModule} from "@angular/router";
+import {RouterModule} from "@angular/router";
+import { LayoutComponent } from './views/layout.component';
+import {SharedModule} from "./shared/shared.module";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    MainComponent,
-    OrderComponent,
-    ProductComponent,
-    ProductsComponent,
-    ProductDescriptionPipe
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
-    RouterLink,
-    RouterLinkActive,
-    AppRoutingModule,
     RouterModule,
-    FormsModule,
+    SharedModule,
+    AppRoutingModule,
     ReactiveFormsModule
   ],
   providers: [
     provideClientHydration(),
-    provideHttpClient(),
-    ProductService,
-    OrderService
+    provideHttpClient()
   ],
   bootstrap: [AppComponent]
 })
