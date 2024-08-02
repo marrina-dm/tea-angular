@@ -1,4 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  height: 100vh;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
 .ui-accordion-header .ui-accordion-header-icon {
   background: url("/images/down.png");
   width: 20px;
